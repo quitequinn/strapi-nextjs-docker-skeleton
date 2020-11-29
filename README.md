@@ -6,11 +6,15 @@ A simple guide for getting Docker, Strapi (with Postgres), and NextJS to play ni
 
 ## Docker
 Install docker.
-(https://docs.docker.com/get-docker/)[https://docs.docker.com/get-docker/]
+(docs.docker.com/get-docker)[https://docs.docker.com/get-docker/]
 
 ## Node/NPM
 Install Node and NPM, I recommend using NVM for this.
-(https://github.com/nvm-sh/nvm)[https://github.com/nvm-sh/nvm]
+(github.com/nvm-sh/nvm)[https://github.com/nvm-sh/nvm]
+
+## Yarn
+Ya, install Yarn.
+(classic.yarnpkg.com/en/docs/install)[https://classic.yarnpkg.com/en/docs/install]
 
 
 # Template Setup 
@@ -38,5 +42,6 @@ docker-compose up # updated recently? run `docker-compose build --no-cache`
 ```
 
 **Frontend**: http://localhost:3000/
+
 **Backend**: http://localhost:1337/
 
