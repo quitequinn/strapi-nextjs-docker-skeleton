@@ -1,5 +1,5 @@
-# Strapi NextJs Skelton
-A simple guide for getting Docker, Strapi, Postgres, and NextJS to play nice together.
+# Strapi NextJs Docker Skelton
+A simple guide for getting Docker, Strapi (with Postgres), and NextJS to play nice together.
 
 
 # Requisites
