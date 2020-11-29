@@ -1,0 +1,49 @@
+---
+version: '3'
+services:
+    frontend:
+        build: frontend/
+        ports:
+            - 3000:3000
+        volumes:
+            - ./frontend:/usr/src/app
+            - /usr/src/app/node_modules
+        working_dir: /usr/src/app
+
+    backend:
+        image: strapi/strapi
+        restart: unless-stopped
+        environment:
+            DATABASE_CLIENT: postgres
+            DATABASE_NAME: strapi
+            DATABASE_HOST: postgres
+            DATABASE_PORT: 5432
+            DATABASE_USERNAME: strapi
+            DATABASE_PASSWORD: strapi
+        volumes:
+            - ./backend:/srv/app
+        ports:
+            - '1337:1337'
+        depends_on:
+            - postgres
+        networks:
+            - strapi-app
+
+    postgres:
+        image: postgres
+        environment:
+            POSTGRES_DB: strapi
+            POSTGRES_USER: strapi
+            POSTGRES_PASSWORD: strapi
+        volumes:
+            - dataDB:/var/lib/postgresql/data
+        ports:
+            - '5432:5432'
+        networks:
+            - strapi-app
+
+volumes:
+    dataDB:
+
+networks:
+    strapi-app:
