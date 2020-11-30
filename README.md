@@ -36,6 +36,8 @@ mv Dockerfile-frontend frontend/Dockerfile
 
 ## Startup Prep
 
+Delete `node_modules` from backend/frontend, then run:
+
 ```bash
 docker-compose pull
 ```
